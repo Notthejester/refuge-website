@@ -446,8 +446,8 @@
       </div>
       <div class="stat-panel">
         <div class="stat-row"><span class="stat-label">CREW ABOARD</span><span class="stat-value" id="crew-count">292</span></div>
-        <div class="stat-row"><span class="stat-label">ARK LAUNCHED</span><span class="stat-value">—</span></div>
-        <div class="stat-row"><span class="stat-label">EVENTS RUN</span><span class="stat-value" id="events-count">—</span></div>
+        <div class="stat-row"><span class="stat-label">EVENTS RUNNING</span><span class="stat-value" id="events-count">—</span></div>
+        <div class="stat-row"><span class="stat-label">UPCOMING EVENTS</span><span class="stat-value" id="upcoming-count">—</span></div>
         <div class="stat-row"><span class="stat-label">ACTIVE DECKS</span><span class="stat-value">6</span></div>
       </div>
     </div>
@@ -724,15 +724,18 @@
     setInterval(update, 120000);
   })();
 
-  // Events running right now, from the site's own /api/events (Netlify function). Refreshes every 2 minutes.
+  // Events running now and upcoming, from the site's own /api/events (Netlify function). Refreshes every 2 minutes.
   (function() {
-    var el = document.getElementById('events-count');
-    if (!el) return;
+    var running = document.getElementById('events-count');
+    var upcoming = document.getElementById('upcoming-count');
+    if (!running && !upcoming) return;
     function update() {
       fetch('/api/events')
         .then(function(res) { return res.json(); })
         .then(function(data) {
-          if (data && typeof data.running === 'number') el.textContent = data.running.toLocaleString();
+          if (!data) return;
+          if (running && typeof data.running === 'number') running.textContent = data.running.toLocaleString();
+          if (upcoming && typeof data.upcoming === 'number') upcoming.textContent = data.upcoming.toLocaleString();
         })
         .catch(function() { /* keep the last number */ });
     }
