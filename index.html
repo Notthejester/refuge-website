@@ -447,7 +447,7 @@
       <div class="stat-panel">
         <div class="stat-row"><span class="stat-label">CREW ABOARD</span><span class="stat-value" id="crew-count">292</span></div>
         <div class="stat-row"><span class="stat-label">ARK LAUNCHED</span><span class="stat-value">—</span></div>
-        <div class="stat-row"><span class="stat-label">EVENTS RUN</span><span class="stat-value">—</span></div>
+        <div class="stat-row"><span class="stat-label">EVENTS RUN</span><span class="stat-value" id="events-count">—</span></div>
         <div class="stat-row"><span class="stat-label">ACTIVE DECKS</span><span class="stat-value">6</span></div>
       </div>
     </div>
@@ -719,6 +719,22 @@
           if (typeof count === 'number') el.textContent = count.toLocaleString();
         })
         .catch(function() { /* keep the last number if Discord can't be reached */ });
+    }
+    update();
+    setInterval(update, 120000);
+  })();
+
+  // Events running right now, from the site's own /api/events (Netlify function). Refreshes every 2 minutes.
+  (function() {
+    var el = document.getElementById('events-count');
+    if (!el) return;
+    function update() {
+      fetch('/api/events')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data && typeof data.running === 'number') el.textContent = data.running.toLocaleString();
+        })
+        .catch(function() { /* keep the last number */ });
     }
     update();
     setInterval(update, 120000);
