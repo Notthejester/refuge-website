@@ -1,0 +1,5 @@
+# Always check for a fresh copy of the pages, so phones don't keep showing an old version.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
