@@ -283,6 +283,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width:860px){
     .navlinks{display:none;}
+    section.band{padding-left:20px; padding-right:20px;}  /* keep text off the screen edges */
     .about-grid{grid-template-columns:1fr; gap:36px;}
     .deck-grid{grid-template-columns:1fr;}
     .crew-grid{grid-template-columns:1fr 1fr;}
@@ -290,7 +291,7 @@
     .log-entry{grid-template-columns:1fr; gap:6px;}
     #programs img[alt="The Events"]{transform:none !important;}
     .reg-head{flex-direction:column; align-items:flex-start !important; text-align:left;}
-    .reg-head img[alt="Server Rules"]{margin-top:18px;}
+    .reg-head img[alt="Server Rules"]{margin-top:18px; align-self:center;}
     .hull-diagram.wrap{overflow:visible; padding:0 16px 8px !important;}
     .hull-diagram svg{width:100%; height:auto; margin:0 auto;}
   }
@@ -298,7 +299,7 @@
     .crew-grid{grid-template-columns:1fr;}
     .staff-grid{grid-template-columns:1fr;}
     .hero{padding:64px 0 44px;}
-    section.band{padding:64px 0;}
+    section.band{padding:64px 16px;}
     .reg-item{grid-template-columns:36px 1fr;}
     #log .section-tag,
     #log .section-head p{transform:none !important;}
