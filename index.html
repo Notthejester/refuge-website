@@ -291,8 +291,8 @@
     #programs img[alt="The Events"]{transform:none !important;}
     .reg-head{flex-direction:column; align-items:flex-start !important; text-align:left;}
     .reg-head img[alt="Server Rules"]{margin-top:18px;}
-    .hull-diagram.wrap{overflow-x:auto; padding-bottom:8px;}
-    .hull-diagram svg{min-width:640px;}
+    .hull-diagram.wrap{overflow:visible; padding:0 16px 8px !important;}
+    .hull-diagram svg{width:100%; height:auto; margin:0 auto;}
   }
   @media (max-width:520px){
     .crew-grid{grid-template-columns:1fr;}
@@ -307,6 +307,9 @@
   @media (max-width:600px){
     .staff-featured{grid-template-columns:1fr; text-align:left;}
     .featured-avatar{margin-bottom:6px;}
+  }
+  @media (max-width:600px){
+    .hull-diagram svg text{font-size:16px; letter-spacing:0;}  /* keep deck names readable when the ship shrinks */
   }
   ::selection{background:var(--blue); color:var(--white);}
 
@@ -350,7 +353,7 @@
     </div>
 
     <div class="hull-diagram wrap" style="padding:0; max-width:1120px; margin-top:70px;">
-      <svg viewBox="0 -30 1000 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detailed deck-layout diagram of the Refuge Ark, a broad three-story vessel. From stern to bow: the Basement, the Custodial Closet, the Central Hub, Community Square, and the Experience District, with the Leadership Wing on the tower above deck">
+      <svg viewBox="-5 -40 1000 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detailed deck-layout diagram of the Refuge Ark, a broad three-story vessel. From stern to bow: the Basement, the Custodial Closet, the Central Hub, Community Square, and the Experience District, with the Leadership Wing on the tower above deck">
         <defs>
           <linearGradient id="hullFade" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="#e0473f" stop-opacity="0.4"/>
