@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Staff Applications · The Refuge</title>
+<meta name="description" content="Apply to join the Refuge staff team.">
+<link rel="icon" href="assets/icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="stars" aria-hidden="true"></div>
+<div class="nebula" aria-hidden="true"></div>
+
+<header>
+  <nav aria-label="Main">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/icon.jpg" alt="The Refuge server icon">
+      THE REFUGE
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="directory.html">Ship Directory</a></li>
+      <li><a href="regulations.html">Regulations</a></li>
+      <li><a href="staff.html">Staff & History</a></li>
+      <li><a href="log.html">Comms Log</a></li>
+      <li><a href="apply.html" aria-current="page">Staff Applications</a></li>
+      <li><a href="donate.html">Donations</a></li>
+      <li><a href="socials.html">Social Media</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="join-btn" href="https://discord.gg/RWwkpZxaM5" target="_blank" rel="noopener">Join the Crew</a>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="directory.html">Ship Directory</a></li>
+      <li><a href="regulations.html">Regulations</a></li>
+      <li><a href="staff.html">Staff & History</a></li>
+      <li><a href="log.html">Comms Log</a></li>
+      <li><a href="apply.html" aria-current="page">Staff Applications</a></li>
+      <li><a href="donate.html">Donations</a></li>
+      <li><a href="socials.html">Social Media</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section id="apply" class="band wrap page-top">
+    <div class="section-head">
+      <p class="section-tag">NOW BOARDING: CREW</p>
+      <h2>Staff applications.</h2>
+      <p>The Refuge is run by its members. If you want to help keep the Ark moving, these are the roles we're looking for.</p>
+    </div>
+    <div class="role-grid">
+      <div class="role-card">
+        <p class="deck-id">ROLE · MODERATION</p>
+        <h3>Moderator</h3>
+        <p>Keep the Ark welcoming and safe, help members when they need it, and lead by example. Above-average moderation, run by people, not bots.</p>
+        <p>A real time commitment. Staff from other departments get priority.</p>
+      </div>
+      <div class="role-card">
+        <p class="deck-id">ROLE · EVENTS</p>
+        <h3>Events Creator</h3>
+        <p>Start and run your own events. Bring a podcast, stream your games, or run something nobody's tried yet.</p>
+        <p>A lighter process: just a proposal to get approved.</p>
+      </div>
+      <div class="role-card">
+        <p class="deck-id">ROLE · RECRUITMENT</p>
+        <h3>Recruiter</h3>
+        <p>Be an ambassador for the Refuge: welcome newcomers, help with social media, and track activity and retention.</p>
+        <p>For many of our leaders, this was the first staff role on the way to bigger things.</p>
+      </div>
+    </div>
+    <div class="apply-box">
+      <p>Every role comes with training, one-on-one leadership support, and a team working toward the same goals. Staff positions are unpaid, so only apply if you can commit to the workload.</p>
+      <a class="btn-primary" id="apply-link" href="#" target="_blank" rel="noopener">Apply now</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <p>THE REFUGE — VESSEL REG. NO. 001</p>
+      <p style="margin-top:4px;">Website created by Jester</p>
+    </div>
+    <p>&copy; 2026 The Refuge. Not affiliated with Discord Inc.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  // Paste the Google Form link between the quotes to switch the Apply button on.
+  var APPLICATION_FORM = '';
+  (function () {
+    var a = document.getElementById('apply-link');
+    if (!a) return;
+    if (APPLICATION_FORM) { a.href = APPLICATION_FORM; }
+    else { a.textContent = 'Form opening soon'; a.classList.add('btn-disabled'); a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); }
+  })();
+</script>
+</body>
+</html>
